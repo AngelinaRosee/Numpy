@@ -1,5 +1,18 @@
 import numpy as np
 
+#Boolean mask 
+rand_numbers = np.random.randint(1, 101, 100)
+mask = (rand_numbers % 3 == 0)
+rand_numbers[mask] = -1
+
+#Fancy Indexing
+matrix = np.random.randint(1, 101, (5, 5))
+alternate_rows = matrix[::2]
+
+#Sorting
+matrix = np.random.randint(1, 101, (10, 10))
+sorted_matrix = matrix[matrix[:, 0].argsort()]
+
 np.random.seed(42)
 rainfall = np.random.gamma(shape=2.0, scale=2.0, size=365)  # Synthetic daily rainfall data
 rainfall[np.random.choice(365, 100, replace=False)] = 0  # 100 dry days
